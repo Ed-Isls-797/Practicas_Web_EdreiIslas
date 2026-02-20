@@ -2,9 +2,9 @@
   <div class="mb-3 mt-3">
     <label for="nombre">Nombre:</label>
     <input type="text" class="form-control" ngModel id="nombre" name="nombre" 
-           required pattern="[a-zA-Z-ZáéíóúÁÉÍÓÚñÑ ]*" #nombre="ngModel" placeholder="Solo letras">
+           required pattern="[a-zA-Z-ZáéíóúÁÉÍÓÚñÑ ]*" #nombre="ngModel" placeholder="Solo letras" minlength="3">
     <div *ngIf="nombre.invalid && nombre.touched" class="text-danger">
-      El nombre es obligatorio y no debe contener números.
+      El nombre es obligatorio, mínimo 3 letras y no debe contener números.
     </div>
   </div>
 
@@ -20,9 +20,9 @@
   <div class="mb-3">
     <label for="carrera">Carrera:</label>
     <input type="text" class="form-control" ngModel id="carrera" name="carrera" 
-           required pattern="^([^0-9]*)$" #carrera="ngModel" placeholder="Carrera sin números">
+           required pattern="^([^0-9]*)$" #carrera="ngModel" placeholder="Carrera sin números" minlength="3">
     <div *ngIf="carrera.invalid && carrera.touched" class="text-danger">
-      La carrera no debe incluir números.
+      La carrera no debe incluir números y mayor a 3 letras
     </div>
   </div>
 
