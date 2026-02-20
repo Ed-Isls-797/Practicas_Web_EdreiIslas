@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { Alumnos } from '../services/alumnos';
+import { ChangeDetectorRef } from '@angular/core';
 @Component({
   selector: 'app-consulta',
   imports: [CommonModule],
@@ -10,11 +11,13 @@ import { Alumnos } from '../services/alumnos';
 })
 export class Consulta implements OnInit {
   listaAlumnos: any[]=[];
-  constructor(private alumnos:Alumnos){}
+  constructor(private alumnos:Alumnos, private cd: ChangeDetectorRef){}
 
   ngOnInit(): void {
     this.alumnos.obtenerAlumnos().subscribe(data=>{
       this.listaAlumnos=data as any[];
+      console.log(this.listaAlumnos);
+      this.cd.detectChanges();
     })
   }
 }
