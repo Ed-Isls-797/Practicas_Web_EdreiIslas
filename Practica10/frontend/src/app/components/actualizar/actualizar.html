@@ -1,0 +1,33 @@
+<form (ngSubmit)="actualizarJuego()">
+
+  <label>Nombre</label>
+  <input type="text" [(ngModel)]="game.nombre" name="nombre">
+
+  <label>Genero</label>
+  <input type="text" [(ngModel)]="game.genero" name="genero">
+  <label>Precio</label>
+  <input type="text" [(ngModel)]="game.precio" name="precio">
+
+  <label>Imagen</label>
+  <input type="text" [(ngModel)]="game.imagenUrl" name="imagenUrl">
+
+  <br><br>
+
+  <button type="submit" class="btn btn-success">
+    Guardar Cambios
+  </button>
+
+</form>
+
+<!-- ALERTA ANGULAR -->
+<div *ngIf="modalVisible" class="alert alert-success mt-3">
+
+  🎮 Juego actualizado correctamente
+
+  <br><br>
+
+  <button class="btn btn-success" (click)="volverHome()">
+    Aceptar
+  </button>
+
+</div>

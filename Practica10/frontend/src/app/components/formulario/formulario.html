@@ -1,0 +1,35 @@
+<h2>Agregar Videojuego</h2>
+
+<form (ngSubmit)="onSubmit()" #f="ngForm">
+
+  <input class="form-control mb-2"
+         placeholder="Nombre"
+         name="nombre"
+         [(ngModel)]="game.nombre"
+         required>
+
+  <input class="form-control mb-2"
+         placeholder="Genero"
+         name="genero"
+         [(ngModel)]="game.genero"
+         required>
+
+  <input type="number"
+         class="form-control mb-2"
+         placeholder="Precio"
+         name="precio"
+         [(ngModel)]="game.precio"
+         required>
+
+  <input class="form-control mb-2"
+         placeholder="Imagen URL"
+         name="imagenUrl"
+         [(ngModel)]="game.imagenUrl"
+         required>
+
+  <button class="btn btn-primary"
+          [disabled]="f.invalid">
+    Guardar
+  </button>
+
+</form>
