@@ -9,4 +9,5 @@ export const routes: Routes = [
   { path: 'eliminar', component: Eliminar },
   { path: 'agregar', component: Formulario },
   { path: 'actualizar/:id', component: Actualizar }
+
 ];
